@@ -1,0 +1,67 @@
+:root{
+  --bg:#0d1117; --card:#161b22; --card2:#1c2330; --border:#2a3140;
+  --text:#e6edf3; --muted:#8b949e; --up:#2ea043; --down:#f85149;
+  --accent:#58a6ff; --gold:#e8d55c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,Arial,sans-serif;font-size:15px}
+.topbar{display:flex;gap:18px;align-items:center;padding:14px 22px;background:#010409;
+  border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.brand{font-size:20px;font-weight:700;white-space:nowrap}
+.brand span{color:var(--gold)}
+.search-wrap{position:relative;flex:1;max-width:640px}
+#searchInput{width:100%;padding:11px 14px;border-radius:8px;border:1px solid var(--border);
+  background:var(--card);color:var(--text);font-size:15px;outline:none}
+#searchInput:focus{border-color:var(--accent)}
+.suggestions{position:absolute;top:110%;left:0;right:0;background:var(--card2);
+  border:1px solid var(--border);border-radius:8px;display:none;z-index:20;overflow:hidden}
+.sug{padding:10px 14px;cursor:pointer;display:flex;justify-content:space-between;gap:10px}
+.sug:hover{background:#243044}
+.sug span{color:var(--muted);font-size:13px}
+.indexes{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;padding:16px 22px}
+.idx-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.idx-name{color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.4px}
+.idx-price{font-size:22px;font-weight:700;margin:4px 0 2px}
+.idx-chg{font-size:13px;font-weight:600}
+.up{color:var(--up)} .down{color:var(--down)}
+.layout{display:grid;grid-template-columns:1fr 370px;gap:18px;padding:6px 22px 20px;align-items:start}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:16px}
+.card h3{margin-bottom:14px;font-size:17px}
+.muted{color:var(--muted)}
+.quote-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.quote-head h2{font-size:26px}
+.sym{color:var(--muted);font-size:16px;font-weight:400}
+.exch{color:var(--muted);font-size:13px;margin-top:4px}
+.quote-price{text-align:right}
+.quote-price .p{font-size:30px;font-weight:700}
+.spark{width:100%;height:110px;margin:14px 0 6px}
+.spark polyline{fill:none;stroke-width:2.5}
+.spark.up polyline{stroke:var(--up)} .spark.down polyline{stroke:var(--down)}
+.kv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.kv{background:var(--card2);border-radius:8px;padding:10px 12px}
+.kv .k{color:var(--muted);font-size:12px}
+.kv .v{font-size:16px;font-weight:600;margin-top:3px}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.metric{background:var(--card2);border-radius:8px;padding:10px 12px}
+.metric .k{color:var(--muted);font-size:12px}
+.metric .v{font-size:17px;font-weight:600;margin-top:3px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--border)}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--muted);font-weight:600}
+tr:hover td{background:#1a2230}
+.sidebar{position:sticky;top:86px;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:16px;max-height:calc(100vh - 110px);overflow:auto}
+.sidebar h3{font-size:16px;margin-bottom:12px;position:sticky;top:-16px;background:var(--card);padding:4px 0}
+.news-item{display:block;color:var(--text);text-decoration:none;padding:10px 6px;border-bottom:1px solid var(--border)}
+.news-item:hover{background:var(--card2)}
+.news-title{font-size:14px;line-height:1.35}
+.news-meta{color:var(--muted);font-size:12px;margin-top:5px}
+.news-empty{color:var(--muted);padding:14px 4px}
+.placeholder{text-align:center;padding:70px 20px;color:var(--muted)}
+.placeholder h2{color:var(--text);margin-bottom:10px}
+.footer{padding:14px 22px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--border);text-align:center}
+@media(max-width:980px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static;max-height:none}
+}

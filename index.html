@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Indian Market Dashboard — NSE · BSE</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">📈 Indian<span>Market</span>Dashboard</div>
+  <div class="search-wrap">
+    <input id="searchInput" type="text" autocomplete="off"
+      placeholder="Search any NSE / BSE company… (e.g. RELIANCE, TCS, 500570.BO)"/>
+    <div id="suggestions" class="suggestions"></div>
+  </div>
+</header>
+<div id="indexes" class="indexes"></div>
+<main class="layout">
+  <section class="content">
+    <div id="company" class="company">
+      <div class="placeholder">
+        <h2>Search a company to view its complete financials</h2>
+        <p>NSE symbols end with <b>.NS</b> · BSE symbols end with <b>.BO</b> (e.g. <b>500570.BO</b>)</p>
+      </div>
+    </div>
+  </section>
+  <aside class="sidebar">
+    <h3>I Latest Financial News</h3>
+    <div id="newsList" class="news-list"><div class="news-empty">Loading…</div></div>
+  </aside>
+</main>
+<footer class="footer">
+  Data via Yahoo Finance / public RSS feeds (delayed ~15 min) · For education only — not investment advice.
+</footer>
+<script src="js/symbols.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
